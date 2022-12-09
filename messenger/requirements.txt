@@ -6,7 +6,7 @@ attrs==19.3.0
 beautifulsoup4==4.9.0
 billiard==3.6.3.0
 bs4==0.0.1
-celery==4.4.2
+celery==5.2.2
 cent==3.0.1
 certifi==2022.12.7
 chardet==3.0.4
