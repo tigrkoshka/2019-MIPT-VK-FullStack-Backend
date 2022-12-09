@@ -47,7 +47,7 @@ pluggy==0.13.1
 psycopg2==2.7.7
 psycopg2-binary==2.7.7
 py==1.10.0
-PyJWT==1.7.1
+PyJWT==2.4.0
 pylint==2.4.4
 pyparsing==2.4.6
 pytest==5.4.0
