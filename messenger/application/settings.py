@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'qq)o820a95r$6%o2qrub!b@)r^grf6_&ycbikf(6h-)v&jmej+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1',
                  'localhost',
@@ -71,7 +71,7 @@ CORS_ALLOW_HEADERS = ['Content-Type', 'X-CSRFToken']
 # change to app.example.com in production settings
 CORS_ORIGIN_WHITELIST = ['http://localhost:3000']
 
-CSRF_TRUSTED_ORIGINS = ['https://localhost:3000/']
+CSRF_TRUSTED_ORIGINS = ['https://localhost:3000']
 
 # Centrifuge
 CENTRIFUGE_ADDRESS = 'http://hummingbirdcentrifugo.herokuapp.com'
@@ -180,5 +180,6 @@ try:
 except ImportError:
     pass
 
-prod_db = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(prod_db)
+DATABASES = {
+    'default': dj_database_url.config(conn_max_age=500)
+}

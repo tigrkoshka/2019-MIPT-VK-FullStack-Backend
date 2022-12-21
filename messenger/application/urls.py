@@ -22,7 +22,7 @@ from .views import *
 urlpatterns = [
     path('users/', include('users.urls')),
     url(r'^captcha/', include('captcha.urls')),
-    path('centrifugo/', centrifugo_token, name='centrifugo'),
+    # path('centrifugo/', centrifugo_token, name='centrifugo'),
     path('chats/', include('chats.urls')),
     path('csrf/', csrf, name='csrf'),
     path('fill_db/', fill_db, name='fill_db'),

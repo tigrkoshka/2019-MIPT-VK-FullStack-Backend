@@ -103,10 +103,10 @@ def csrf(request):
     return JsonResponse({'csrfToken': get_token(request)})
 
 
-@require_GET
-def centrifugo_token(request):
-    token = jwt.encode({"sub": str(request.GET.get('id'))}, 'secret', algorithm="HS256").decode()
-    return JsonResponse({'token': token})
+# @require_GET
+# def centrifugo_token(request):
+#     token = jwt.encode({"sub": str(request.GET.get('id'))}, 'secret', algorithm="HS256").decode()
+#     return JsonResponse({'token': token})
 
 
 if __name__ == '__main__':

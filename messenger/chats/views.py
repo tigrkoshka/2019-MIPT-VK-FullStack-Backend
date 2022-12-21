@@ -40,11 +40,11 @@ def create_chat(request):
     if form.is_valid():
         form.save()
 
-        send_email.delay(
-            'Chat created',
-            'Congratulations! You successfully created a chat!\n\nLove,\nHummingburd',
-            'tigrankoshkelyan@gmail.com'
-        )
+        # send_email.delay(
+        #     'Chat created',
+        #     'Congratulations! You successfully created a chat!\n\nLove,\nHummingburd',
+        #     'tigrankoshkelyan@gmail.com'
+        # )
 
         return JsonResponse({
             'msg': 'Чат создан',
@@ -74,7 +74,7 @@ def send_message(request):
         else:
             to_send["message"]["content"] = msg.content
 
-        client.publish("chat:" + str(msg.chat.tag), to_send)
+        # client.publish("chat:" + str(msg.chat.tag), to_send)
         return JsonResponse({
             'msg': 'Сообщение отправлено'
         })
